@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Login-EyeDoc</title>
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans|Raleway|Candal">
+  <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="css/style.css">  
+  <link rel="shortcut icon" id="favicon" href="img/new5.ico" type="image/x-icon">
+ 
+</head>
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+  <!--banner-->
+    <div style="background-color: RGBA(13, 70, 83, 0.78); height: 150px;">
+      <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+          <div class="col-md-12">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+				        <span class="icon-bar"></span>
+				        <span class="icon-bar"></span>
+				        <span class="icon-bar"></span>
+				      </button>
+              <div class="brand">
+              <img src="img/new5.png" class="img-responsive" style="width: 120px; margin-top: -16px;"></a>
+            </div>
+            </div>
+            <div class="collapse navbar-collapse navbar-right" id="myNavbar">
+              <ul class="nav navbar-nav">
+                <li class="active"><a href="index.html">Home</a></li>
+                <li class=""><a href="index.html">Services</a></li>
+                <li class=""><a href="index.html">About</a></li>
+                <li class=""><a href="index.html">Contact</a></li>
+                <li class=""><a href="login.html">Login/Signup</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </nav>
+	</div>
+	<div class="container" style="max-width: 500px; margin: 100px auto;">
+    <!-- Login form -->
+
+    <form id="loginForm" action="/login" method="POST">
+	    <h2>Login</h2><br>
+        <div class="form-group">
+            <label for="loginUsername">Username:</label>
+            <input type="text" id="loginUsername" name="username" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="loginPassword">Password:</label>
+            <input type="password" id="loginPassword" name="password" class="form-control" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Login</button>
+		<button type="submit" class="btn btn-primary">Forgot Password</button>
+        <button type="submit" class="btn btn-link" id="showSignupButton">Sign up?</button>
+    </form>
+
+    <!-- Signup form (initially hidden) -->
+    <form id="signupForm" action="/signup" method="POST" style="display: none;">
+	<h2>Sign Up</h2> <br>
+        <div class="form-group">
+            <label for="signupUsername">Username:</label>
+            <input type="text" id="signupUsername" name="username" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="signupEmail">Email:</label>
+            <input type="email" id="signupEmail" name="email" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="signupPassword">Password:</label>
+            <input type="password" id="signupPassword" name="password" class="form-control" required>
+        </div>
+		<div class="form-group">
+            <label for="roleSelect">Role:</label>
+            <select id="roleSelect" name="role" class="form-control" required>
+                <option value="" disabled selected>Select your role</option>
+                <option value="patient">Patient</option>
+                <option value="healthcare_provider">Healthcare Provider</option>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Sign Up</button>
+        <button type="button" class="btn btn-link" id="showLoginButton">Back to Login</button>
+    </form>
+</div>
+
+<script>
+    // Event listener for "Sign up?" button
+    document.getElementById('showSignupButton').addEventListener('click', function(event) {
+        event.preventDefault();
+        // Hide the login form
+        document.getElementById('loginForm').style.display = 'none';
+        // Show the signup form
+        document.getElementById('signupForm').style.display = 'block';
+    });
+
+    // Event listener for "Back to Login" button
+    document.getElementById('showLoginButton').addEventListener('click', function(event) {
+        event.preventDefault();
+        // Hide the signup form
+        document.getElementById('signupForm').style.display = 'none';
+        // Show the login form
+        document.getElementById('loginForm').style.display = 'block';
+    });
+</script>
+
+</body>
+</body>
+</html>	
